@@ -103,9 +103,9 @@ export default function Hero() {
           {/* Stats */}
           <motion.div className="flex flex-wrap gap-10 md:gap-16 pt-4">
             {[
-              { value: "4+", label: "Years Learning" },
-              { value: "15+", label: "Projects Built" },
-              { value: "500+", label: "Hours Coding" },
+              { value: "5+", label: "Years Learning" },
+              { value: "20+", label: "Projects Built" },
+              { value: "100%", label: "Happy Clients" },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}

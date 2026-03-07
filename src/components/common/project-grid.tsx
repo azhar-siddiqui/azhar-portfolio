@@ -49,7 +49,7 @@ export default function ProjectGrid({
   });
 
   return (
-    <section className="dark:bg-linear-to-b dark:from-slate-950 dark:to-slate-900 bg-linear-to-b from-white to-gray-50 py-12 md:py-20">
+    <section className="bg-linear-to-b from-background to-background py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
@@ -65,17 +65,17 @@ export default function ProjectGrid({
             >
               <Card
                 className={cn(
-                  "relative overflow-hidden rounded-2xl dark:bg-slate-900/80 bg-white/80 dark:border-slate-700/50 border-gray-300/50",
-                  "dark:hover:shadow-xl dark:hover:shadow-blue-500/10 hover:shadow-blue-400/10 dark:hover:border-blue-500/40 hover:border-blue-300/50 hover:scale-[1.02] transition-all duration-300",
+                  "relative overflow-hidden rounded-2xl bg-card/60 border-border/50",
+                  "hover:shadow-primary/10 hover:border-primary/40 hover:scale-[1.02] transition-all duration-300",
                 )}
               >
                 <motion.div
-                  className="relative h-40 dark:bg-linear-to-b dark:from-slate-800 dark:to-slate-900 bg-linear-to-b from-blue-50 to-white flex items-center justify-center group"
+                  className="relative h-40 bg-linear-to-b from-card to-card flex items-center justify-center group"
                   whileHover={{ y: -5 }}
                 >
                   {/* Placeholder - gradient icon */}
                   <motion.div
-                    className="w-20 h-20 dark:bg-linear-to-br dark:from-blue-900/80 dark:to-purple-900/80 bg-linear-to-br from-blue-200 to-purple-200 rounded-xl"
+                    className="w-20 h-20 bg-linear-to-br from-primary to-secondary rounded-xl"
                     whileHover={{ rotate: 10, scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   />
@@ -88,7 +88,7 @@ export default function ProjectGrid({
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="dark:text-gray-500 text-gray-400 dark:hover:text-amber-400 hover:text-amber-500"
+                      className="text-muted-foreground hover:text-secondary"
                     >
                       <Star className="h-5 w-5" />
                     </Button>
@@ -97,17 +97,17 @@ export default function ProjectGrid({
 
                 <CardContent className="p-6 space-y-4">
                   <div className="flex items-start justify-between gap-3">
-                    <CardTitle className="text-lg md:text-xl font-bold dark:text-white text-gray-900 line-clamp-2">
+                    <CardTitle className="text-lg md:text-xl font-bold text-foreground line-clamp-2">
                       {project.title}
                     </CardTitle>
                     <Badge
                       variant="secondary"
-                      className="dark:bg-blue-500/20 dark:text-blue-300 dark:border-blue-500/30 bg-blue-100 text-blue-700 border-blue-200 whitespace-nowrap shrink-0 text-xs"
+                      className="bg-card/70 text-muted-foreground border-border/50 whitespace-nowrap shrink-0 text-xs"
                     >
                       {project.tech}
                     </Badge>
                   </div>
-                  <p className="text-sm dark:text-gray-400 text-gray-600 line-clamp-3">
+                  <p className="text-sm text-muted-foreground line-clamp-3">
                     {project.description}
                   </p>
                 </CardContent>
@@ -117,7 +117,7 @@ export default function ProjectGrid({
                     <Badge
                       key={`${tag}-${i}`}
                       variant="outline"
-                      className="text-xs dark:text-gray-500 dark:border-slate-700/50 text-gray-600 border-gray-300/50"
+                      className="text-xs text-muted-foreground border-border/50"
                     >
                       {tag}
                     </Badge>
@@ -128,13 +128,13 @@ export default function ProjectGrid({
                         variant="ghost"
                         size="sm"
                         asChild
-                        className="dark:text-blue-400 text-blue-600 hover:dark:text-blue-300 hover:text-blue-700 p-0 h-auto font-semibold text-xs"
+                        className="text-secondary hover:text-secondary/80 p-0 h-auto font-semibold text-xs"
                       >
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1"
+                          className="flex items-center gap-1 py-2"
                         >
                           View <ExternalLink className="h-3 w-3" />
                         </a>
@@ -149,7 +149,7 @@ export default function ProjectGrid({
 
         {filteredProjects.length === 0 && (
           <motion.p
-            className="text-center dark:text-gray-500 text-gray-400 mt-10"
+            className="text-center text-muted-foreground mt-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}

@@ -78,8 +78,8 @@ export const DATA = {
     { href: "/projects", icon: FolderOpen, label: "Projects" },
   ],
   contact: {
-    email: "reachtozahid@gmail.com",
-    tel: "+91 8806544670",
+    email: "azhartsiddiqui@gmail.com",
+    tel: "+91 7558380826",
     social: {
       GitHub: {
         name: "GitHub",

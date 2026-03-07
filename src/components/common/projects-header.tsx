@@ -81,12 +81,6 @@ export default function ProjectsHeader() {
         </div>
 
         {/* Title section */}
-        <div className="mt-12 md:mt-16 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-            FEATURED PROJECTS
-          </h2>
-        </div>
-
         <ProjectGrid
           activeCategory={activeCategory}
           searchQuery={searchQuery}

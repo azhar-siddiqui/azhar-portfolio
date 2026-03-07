@@ -1,6 +1,7 @@
+import { Icons } from "@/components/common/icon";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -15,7 +16,7 @@ export default function Contact() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Small top badge / pill */}
-        <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-accent/40 backdrop-blur-sm rounded-full border border-primary/30 text-sm font-medium text-secondary mb-8">
+        <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-accent/40 backdrop-blur-sm rounded-full border border-primary/30 text-sm font-medium text-primary mb-8">
           <Mail className="h-4 w-4" />
           <span>Let's Talk</span>
         </div>
@@ -34,7 +35,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/azhar-shayyed-7a4843178/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-secondary hover:text-secondary/80 underline underline-offset-4 transition-colors font-medium"
+            className="text-primary hover:text-secondary/80 underline underline-offset-4 transition-colors font-medium"
           >
             LinkedIn ↗
           </a>{" "}
@@ -45,19 +46,19 @@ export default function Contact() {
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-muted-foreground mb-12">
           <div className="flex items-center gap-2">
             <Phone className="h-4 w-4 text-secondary" />
-            <span>+91 8806544670</span>
+            <span>+91 7558380826</span>
           </div>
           <div className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-secondary" />
             <a
-              href="mailto:reachtozahid@gmail.com"
+              href="mailto:azhartsiddiqui@gmail.com"
               className="hover:text-secondary/80 transition-colors"
             >
-              reachtozahid@gmail.com
+              azhartsiddiqui@gmail.com
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <Github className="h-4 w-4 text-secondary" />
+            <Icons.github className="h-4 w-4 text-secondary" />
             <a
               href="https://github.com/azhar-siddiqui"
               target="_blank"
@@ -86,7 +87,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="mr-2 h-5 w-5" />
+              <Icons.linkedin className="mr-2 h-5 w-5" />
               Connect on LinkedIn
             </a>
           </Button>
@@ -101,7 +102,7 @@ export default function Contact() {
             )}
             asChild
           >
-            <a href="mailto:reachtozahid@gmail.com">
+            <a href="mailto:azhartsiddiqui@gmail.com">
               <Mail className="mr-2 h-5 w-5" />
               Send Email
             </a>
