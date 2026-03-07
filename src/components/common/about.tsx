@@ -111,7 +111,7 @@ export default function About() {
               Frontend Lead & Full-Stack Engineer
               <br />
               <span className="bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
-                in Nagpur
+                in Aurangabad
               </span>
             </h1>
             <motion.p

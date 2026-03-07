@@ -49,7 +49,7 @@ export default function ProjectGrid({
   });
 
   return (
-    <section className="dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-900 bg-gradient-to-b from-white to-gray-50 py-12 md:py-20">
+    <section className="dark:bg-linear-to-b dark:from-slate-950 dark:to-slate-900 bg-linear-to-b from-white to-gray-50 py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
@@ -70,12 +70,12 @@ export default function ProjectGrid({
                 )}
               >
                 <motion.div
-                  className="relative h-40 dark:bg-gradient-to-b dark:from-slate-800 dark:to-slate-900 bg-gradient-to-b from-blue-50 to-white flex items-center justify-center group"
+                  className="relative h-40 dark:bg-linear-to-b dark:from-slate-800 dark:to-slate-900 bg-linear-to-b from-blue-50 to-white flex items-center justify-center group"
                   whileHover={{ y: -5 }}
                 >
                   {/* Placeholder - gradient icon */}
                   <motion.div
-                    className="w-20 h-20 dark:bg-gradient-to-br dark:from-blue-900/80 dark:to-purple-900/80 bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl"
+                    className="w-20 h-20 dark:bg-linear-to-br dark:from-blue-900/80 dark:to-purple-900/80 bg-linear-to-br from-blue-200 to-purple-200 rounded-xl"
                     whileHover={{ rotate: 10, scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   />

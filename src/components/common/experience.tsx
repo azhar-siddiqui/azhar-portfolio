@@ -74,7 +74,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="dark:bg-gradient-to-b dark:from-slate-950 dark:to-slate-900 bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
+    <section className="dark:bg-linear-to-b dark:from-slate-950 dark:to-slate-900 bg-linear-to-b from-white to-gray-50 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -97,7 +97,7 @@ export default function Experience() {
         <div className="relative">
           {/* Vertical line */}
           <motion.div
-            className="absolute left-4 md:left-1/2 h-full w-0.5 dark:bg-gradient-to-b dark:from-blue-500/40 dark:via-blue-500/20 dark:to-transparent bg-gradient-to-b from-blue-300/40 via-blue-300/20 to-transparent md:transform md:-translate-x-1/2"
+            className="absolute left-4 md:left-1/2 h-full w-0.5 dark:bg-linear-to-b dark:from-blue-500/40 dark:via-blue-500/20 dark:to-transparent bg-linear-to-b from-blue-300/40 via-blue-300/20 to-transparent md:transform md:-translate-x-1/2"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}

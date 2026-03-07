@@ -34,7 +34,7 @@ const education = [
 
 export default function Education() {
   return (
-    <section className="relative dark:bg-gradient-to-b dark:from-slate-950 dark:to-black bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 overflow-hidden">
+    <section className="relative dark:bg-linear-to-b dark:from-slate-950 dark:to-black bg-linear-to-b from-white to-gray-50 py-16 md:py-24 overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0 opacity-30 dark:opacity-40 pointer-events-none dark:block hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(34,211,238,0.08),transparent_40%)]" />
@@ -81,7 +81,7 @@ export default function Education() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 relative">
           {/* Decorative connecting line */}
           <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-0.5 dark:bg-gradient-to-r dark:from-transparent dark:via-blue-500/30 dark:to-transparent bg-gradient-to-r from-transparent via-blue-300/30 to-transparent hidden md:block"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-0.5 dark:bg-linear-to-r dark:from-transparent dark:via-blue-500/30 dark:to-transparent bg-linear-to-r from-transparent via-blue-300/30 to-transparent hidden md:block"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
