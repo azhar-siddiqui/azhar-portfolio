@@ -62,7 +62,7 @@ export default function About() {
             }}
           >
             <Image
-              src="/profile-img.png"
+              src="/me.png"
               alt="Sayyed Azhar Aminoddin"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

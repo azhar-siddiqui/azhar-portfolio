@@ -165,7 +165,7 @@ export default function Hero() {
             }}
           >
             <Image
-              src="/profile-img.png"
+              src="/me.png"
               alt="Azhar Sayyed"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
