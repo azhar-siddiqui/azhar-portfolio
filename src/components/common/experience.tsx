@@ -76,7 +76,7 @@ export default function Experience() {
   return (
     <section
       id="work"
-      className="bg-linear-to-b from-background to-background py-16 md:py-24"
+      className="bg-linear-to-b from-background to-background py-16 md:py-24 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}

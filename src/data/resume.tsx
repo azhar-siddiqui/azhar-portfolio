@@ -4,7 +4,7 @@ import { FolderOpen, HomeIcon } from "lucide-react";
 export const DATA = {
   name: "Azhar Shayyed",
   initials: "AS",
-  url: "https://azharshayyed.space",
+  url: "https://azhar-portfolio-delta.vercel.app/",
   location: "Pune, India",
   locationLink: "https://www.google.com/maps/place/azhar+sayyed",
   description:
@@ -17,11 +17,6 @@ export const DATA = {
       { name: "React", color: null, icon: "react" },
       { name: "Next.js", color: "#ffffff", icon: "nextdotjs" },
       { name: "React Native", color: null, icon: "react" },
-      // { name: "Angular", color: "#dd0031", icon: "angular" },
-      // { name: "Vue.js", color: null, icon: "vuedotjs" },
-      // { name: "Svelte", color: null, icon: "svelte" },
-      // { name: "Ionic", color: null, icon: "ionic" },
-      // { name: "Capacitor.js", color: null, icon: "capacitor" },
       { name: "TanStack", color: "#ffffff", icon: "tanstack" },
       { name: "Redux/RTK", color: null, icon: "redux" },
       { name: "TailwindCSS", color: null, icon: "tailwindcss" },
@@ -47,10 +42,7 @@ export const DATA = {
       { name: "MongoDB", color: null, icon: "mongodb" },
       { name: "PostgreSQL", color: null, icon: "postgresql" },
       { name: "Axios", color: null, icon: "axios" },
-      // { name: "Commander", color: null, icon: "gnubash" },
       { name: "Dotenv", color: null, icon: "dotenv" },
-      // { name: "Handlebars", color: "#ffffff", icon: "handlebarsdotjs" },
-      // { name: "Winston", color: null, icon: "gnubash" },
       { name: "Zod", color: null, icon: "zod" },
     ],
     devops: [
@@ -66,9 +58,7 @@ export const DATA = {
       { name: "SonarQube", color: null, icon: null },
     ],
     testing: [
-      // { name: "Cypress", color: null, icon: "cypress" },
       { name: "Jest", color: null, icon: "jest" },
-      // { name: "Playwright", color: null, icon: "playwright" },
       { name: "Vitest", color: null, icon: "vitest" },
       { name: "Testing Library", color: null, icon: "testinglibrary" },
     ],
@@ -126,18 +116,6 @@ export const DATA = {
       description:
         "Designed and launched 8+ revenue-generating platforms across finance, education, logistics, and social impact. Mentored junior teams, converted stakeholder needs into efficient products, and drove gains in user adoption, efficiency, and profitability. Shipped features with real-time data handling and offline capabilities.",
     },
-    {
-      company: "Glixcel",
-      href: "", // Add if available
-      badges: [],
-      location: "Remote",
-      title: "Full-Stack Developer",
-      logoUrl: "", // Add logo if available
-      start: "Aug 2020",
-      end: "Sep 2021",
-      description:
-        "Built and scaled an EdTech marketplace from scratch, connecting thousands of tutors and students in India. Integrated secure payments and real-time scheduling, leading to the company's first profitable quarters.",
-    },
   ],
   education: [
     {
@@ -176,7 +154,7 @@ export const DATA = {
     {
       title: "R Batteries Store",
       href: "https://rbatteries.store/",
-      dates: "Nov 2025 – Nov 2025",
+      dates: "Nov 2025 - Nov 2025",
       company: "Personal Project",
       active: true,
       description:

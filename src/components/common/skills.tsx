@@ -8,8 +8,7 @@ import * as SimpleIcons from "simple-icons";
 import { BlurFade } from "../ui/blur-fade";
 
 const BLUR_FADE_DELAY = 0.03;
-
-export function SkillsSection() {
+export default function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -44,7 +43,7 @@ export function SkillsSection() {
 
   return (
     <section id="skills">
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl px-6">
         <BlurFade delay={BLUR_FADE_DELAY} inView>
           <h2 className="section-heading mb-8">
             Skills
@@ -57,8 +56,8 @@ export function SkillsSection() {
               variant={selectedCategory === "all" ? "default" : "secondary"}
               className={`cursor-pointer px-4 py-2 text-sm sm:text-base font-semibold transition-all duration-300 rounded-lg ${
                 selectedCategory === "all"
-                  ? "bg-primary hover:bg-primary/90 text-white border-0"
-                  : "hover:bg-primary/10"
+                  ? "bg-linear-to-r from-primary to-secondary"
+                  : "hover:shadow-xl hover:shadow-primary/30"
               }`}
               onClick={() => setSelectedCategory("all")}
             >
@@ -70,8 +69,8 @@ export function SkillsSection() {
                 variant={selectedCategory === cat ? "default" : "secondary"}
                 className={`cursor-pointer px-4 py-2 text-sm sm:text-base font-semibold capitalize transition-all duration-300 rounded-lg ${
                   selectedCategory === cat
-                    ? "bg-primary hover:bg-primary/90 text-white border-0"
-                    : "hover:bg-primary/10"
+                    ? "bg-linear-to-r from-primary to-secondary"
+                    : "hover:shadow-xl hover:shadow-primary/30"
                 }`}
                 onClick={() => setSelectedCategory(cat)}
               >
@@ -84,7 +83,11 @@ export function SkillsSection() {
           {allSkills.map(({ skill, category }, id) => {
             const icon = getIcon(skill.icon);
             return (
-              <BlurFade key={id} delay={BLUR_FADE_DELAY * 2 + id * 0.01} inView>
+              <BlurFade
+                key={`${skill.name}-${category}`}
+                delay={BLUR_FADE_DELAY * 2 + id * 0.01}
+                inView
+              >
                 <Badge
                   variant="outline"
                   className="px-3 py-2.5 text-sm sm:text-base font-medium transition-all duration-300 hover:bg-primary/10 hover:border-primary/40 flex items-center gap-2 cursor-default group"
