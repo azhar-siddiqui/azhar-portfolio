@@ -287,7 +287,7 @@ export const DATA = {
     {
       title: "Safe Water Network → Field Operations Platform",
       href: "https://safewaternetwork.org",
-      dates: "Dec 2022 – Sep 2023",
+      dates: "Dec 2022 - Sep 2023",
       company: "Rightbrain Infotech",
       active: true,
       description:
@@ -305,7 +305,7 @@ export const DATA = {
     {
       title: "BrightUp → Personal Financial Wellness",
       href: "https://brightup.life",
-      dates: "Jun 2022 – Jul 2023",
+      dates: "Jun 2022 - Jul 2023",
       company: "Rightbrain Infotech",
       active: true,
       description:

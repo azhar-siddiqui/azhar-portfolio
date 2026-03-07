@@ -32,7 +32,7 @@ export default function Contact() {
           <br className="hidden sm:block" />
           or partnerships. Feel free to reach out on{" "}
           <a
-            href="https://www.linkedin.com/in/azhar-shayyed-7a4843178/"
+            href="https://www.linkedin.com/in/azhar-siddiqui-673147179/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:text-secondary/80 underline underline-offset-4 transition-colors font-medium"
@@ -83,7 +83,7 @@ export default function Contact() {
             asChild
           >
             <a
-              href="https://www.linkedin.com/in/azhar-shayyed-7a4843178/"
+              href="https://www.linkedin.com/in/azhar-siddiqui-673147179/"
               target="_blank"
               rel="noopener noreferrer"
             >

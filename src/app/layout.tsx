@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     "Portfolio",
     "Pune",
   ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: `${DATA.name} — Senior Product Engineer`,
     description: DATA.description,
