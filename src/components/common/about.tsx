@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
@@ -127,38 +126,13 @@ export default function About() {
             variants={containerVariants}
           >
             {[
-              "I'm a performance-driven Frontend Lead with hands-on experience turning complex business requirements into clean, scalable digital products. From global maritime fleet systems to logistics SaaS platforms, I specialize in React, Next.js, TypeScript, Tailwind CSS, Prisma, and modern stacks that deliver fast, reliable, and maintainable experiences.",
-              "At Kiya.ai, I architected and developed the Global Tanker Fleet Management System — a TypeScript/React/Vite application with RBAC, interactive Deck.GL maps, AG Grid dashboards, real-time reporting, and Azure CI/CD pipelines. I mentored juniors, enforced code quality via SonarQube, and optimized performance in high-compliance environments.",
-              "Previously at Quloi and Banatech, I collaborated on UX-driven interfaces that boosted engagement, reduced page load times by 30%+, and drove revenue through seamless third-party integrations and responsive design. I thrive on solving real problems with elegant, performant code — whether it's secure authentication, dynamic PDF generation, inventory tracking, or complex data visualization.",
+              "With over 5 years of experience as a Frontend Developer, I specialize in building scalable, high-performance web applications that help businesses grow and deliver exceptional user experiences. My core expertise includes React, Next.js, TypeScript, JavaScript, and Tailwind CSS, enabling me to develop modern, responsive, and maintainable web solutions.",
+              "I have a proven track record of delivering high-quality, production-ready software on time, collaborating closely with cross-functional teams, and ensuring that every product aligns with both technical excellence and business goals.",
+              "I have a proven track record of delivering high-quality, production-ready software on time, collaborating closely with cross-functional teams, and ensuring that every product aligns with both technical excellence and business goals.",
             ].map((text, i) => (
               <motion.p key={`${text}-${i}`} variants={itemVariants}>
                 {text}
               </motion.p>
-            ))}
-          </motion.div>
-
-          {/* Skills pills */}
-          <motion.div
-            className="flex flex-wrap gap-2 pt-4"
-            variants={itemVariants}
-          >
-            {[
-              "React",
-              "Next.js",
-              "TypeScript",
-              "Tailwind CSS",
-              "Prisma",
-              "React Native",
-              "Node.js",
-              "Shadcn UI",
-            ].map((skill) => (
-              <Badge
-                key={skill}
-                variant="secondary"
-                className="px-3 py-1 text-sm"
-              >
-                {skill}
-              </Badge>
             ))}
           </motion.div>
         </motion.div>

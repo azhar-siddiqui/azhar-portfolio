@@ -91,12 +91,14 @@ export default function Hero() {
             />
 
             <motion.p
-              className="text-xl sm:text-2xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
+              className="text-md sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl"
               variants={itemVariants}
               transition={{ duration: 0.9 }}
             >
-              Crafting beautiful, functional digital experiences that people
-              love and businesses rely on.
+              I turn complex business requirements into scalable web
+              applications that improve productivity, streamline workflows, and
+              support enterprise and logistics platforms using modern
+              technologies.
             </motion.p>
           </motion.div>
 
