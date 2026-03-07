@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-linear-to-b from-background to-background/95 py-20 md:py-32 border-t border-border/50"
+      className="relative bg-linear-to-b from-background to-background/95 py-20 md:py-32"
     >
       {/* Subtle background gradient */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
