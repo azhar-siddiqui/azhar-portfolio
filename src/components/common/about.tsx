@@ -25,20 +25,20 @@ const itemVariants: Variants = {
 export default function About() {
   return (
     <section
+      id="about"
       className={cn(
         "relative py-20 md:py-32 overflow-hidden",
-        "bg-linear-to-br from-white via-gray-50 to-white",
-        "dark:from-slate-950 dark:via-slate-900 dark:to-black",
-        "text-gray-900 dark:text-white",
+        "bg-linear-to-br from-background via-background to-background",
+        "text-foreground",
       )}
     >
       {/* Background overlays */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-40 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(34,211,238,0.08),transparent_40%)] dark:bg-[radial-gradient(circle_at_30%_70%,rgba(34,211,238,0.12),transparent_40%)]" />
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,hsl(var(--color-primary)/0.08),transparent_40%)]" />
       </div>
 
-      <div className="absolute inset-0 opacity-20 dark:hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(59,130,246,0.08),transparent_40%)]" />
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--color-primary)/0.06),transparent_40%)]" />
       </div>
 
       <motion.div
@@ -54,13 +54,12 @@ export default function About() {
           variants={itemVariants}
         >
           <motion.div
-            className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-full md:max-w-md rounded-3xl overflow-hidden border-2 md:border-4 dark:border-cyan-500/30 border-blue-300/50 shadow-2xl dark:shadow-cyan-500/20 shadow-blue-500/10"
+            className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-full md:max-w-md rounded-3xl overflow-hidden border-2 md:border-4 border-primary/30 shadow-2xl shadow-primary/10"
             animate={{ y: [0, -8, 0] }}
             transition={{
               duration: 3.5,
               repeat: Infinity,
               repeatType: "reverse",
-              ease: "easeInOut",
             }}
           >
             <Image
@@ -84,16 +83,16 @@ export default function About() {
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
-                className="dark:bg-slate-900/80 bg-white/80 backdrop-blur-sm dark:border-gray-700/50 border border-gray-300/50 rounded-2xl px-5 py-3 text-center dark:shadow-lg dark:shadow-black/40 shadow-sm"
+                className="bg-card/70 backdrop-blur-sm border border-border/50 rounded-2xl px-5 py-3 text-center shadow-sm"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
               >
-                <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+                <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="text-xs md:text-sm dark:text-gray-400 text-gray-600 mt-1 font-medium">
+                <div className="text-xs md:text-sm text-muted-foreground mt-1 font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -104,18 +103,18 @@ export default function About() {
         {/* Right: Text content */}
         <motion.div className="space-y-8 md:space-y-10">
           <motion.div className="space-y-3" variants={itemVariants}>
-            <h2 className="uppercase text-sm md:text-base font-bold tracking-wider bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+            <h2 className="uppercase text-sm md:text-base font-bold tracking-wider bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               ABOUT SAYYED AZHAR
             </h2>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight dark:text-white text-gray-900">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground">
               Frontend Lead & Full-Stack Engineer
               <br />
-              <span className="bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                 in Aurangabad
               </span>
             </h1>
             <motion.p
-              className="text-lg md:text-xl dark:text-gray-300 text-gray-700"
+              className="text-lg md:text-xl text-muted-foreground"
               variants={itemVariants}
             >
               Building scalable, performant web & mobile solutions for
@@ -124,7 +123,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="space-y-6 text-base md:text-lg dark:text-gray-300 text-gray-700 leading-relaxed"
+            className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed"
             variants={containerVariants}
           >
             {[
@@ -156,7 +155,7 @@ export default function About() {
               <Badge
                 key={skill}
                 variant="secondary"
-                className="px-3 py-1 text-sm dark:bg-cyan-500/20 dark:text-cyan-300 dark:border-cyan-500/30 bg-blue-50 text-blue-700 border-blue-200"
+                className="px-3 py-1 text-sm"
               >
                 {skill}
               </Badge>

@@ -17,8 +17,54 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Azhar - Portfolio",
-  description: "Welcome to my portfolio",
+  metadataBase: new URL(DATA.url),
+  title: {
+    default: `${DATA.name} — Senior Product Engineer & Full-Stack Developer`,
+    template: "%s | Azhar Sayyed Portfolio",
+  },
+  description: DATA.description,
+  keywords: [
+    "Azhar Sayyed",
+    "Frontend Developer",
+    "Full-Stack Engineer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Web Developer",
+    "Portfolio",
+    "Pune",
+  ],
+  openGraph: {
+    title: `${DATA.name} — Senior Product Engineer`,
+    description: DATA.description,
+    url: DATA.url,
+    type: "website",
+    images: [
+      {
+        url: `${DATA.url}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: `${DATA.name} Portfolio`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${DATA.name} — Senior Product Engineer`,
+    description: DATA.description,
+    images: [`${DATA.url}/og-image.png`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 function JsonLd() {
@@ -110,7 +156,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 transition-colors`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground transition-colors duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Loader />

@@ -52,7 +52,7 @@ const NavBar = () => {
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "dark:bg-slate-900/80 bg-white/80 backdrop-blur-lg dark:border-b dark:border-white/10 border-b border-gray-200/50 shadow-lg"
+          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -61,7 +61,7 @@ const NavBar = () => {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="#home" className="shrink-0">
-              <span className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+              <span className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity">
                 Azhar
               </span>
             </Link>
@@ -73,10 +73,10 @@ const NavBar = () => {
               <motion.div key={link.name} whileHover={{ y: -2 }}>
                 <Link
                   href={link.href}
-                  className="dark:text-gray-300 text-gray-700 dark:hover:text-blue-400 hover:text-blue-600 transition-colors font-medium text-sm relative group"
+                  className="text-muted-foreground hover:text-secondary transition-colors font-medium text-sm relative group"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
                 </Link>
               </motion.div>
             ))}
@@ -95,7 +95,6 @@ const NavBar = () => {
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   aria-label="Toggle theme"
                   size="icon"
-                  className="dark:border-white/20 dark:hover:bg-white/10"
                 >
                   {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                 </Button>
@@ -119,7 +118,7 @@ const NavBar = () => {
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden dark:hover:bg-white/10"
+                className="md:hidden"
                 variant="ghost"
                 size="icon"
                 aria-label="Toggle mobile menu"
@@ -139,7 +138,7 @@ const NavBar = () => {
           height: isMobileMenuOpen ? "auto" : 0,
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden dark:bg-slate-900/95 bg-white/95 backdrop-blur-lg dark:border-b dark:border-white/10 border-b border-gray-200/50"
+        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-b border-border/50"
       >
         <div className="px-4 pt-2 pb-4 space-y-2">
           {navLinks.map((link, index) => (
@@ -153,7 +152,7 @@ const NavBar = () => {
             >
               <Link
                 href={link.href}
-                className="block px-3 py-2 rounded-lg dark:text-gray-300 text-gray-700 dark:hover:bg-white/10 hover:bg-gray-100 transition-colors font-medium"
+                className="block px-3 py-2 rounded-lg text-muted-foreground hover:bg-accent/50 hover:text-secondary transition-colors font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}

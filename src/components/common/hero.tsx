@@ -31,21 +31,21 @@ const imageVariants: Variants = {
 export default function Hero() {
   return (
     <section
+      id="home"
       className={cn(
         "relative min-h-screen flex items-center justify-center",
-        "bg-linear-to-br from-white via-gray-50 to-white",
-        "dark:from-slate-950 dark:via-slate-900 dark:to-black",
-        "text-gray-900 dark:text-white overflow-hidden",
+        "bg-linear-to-br from-background via-background to-background",
+        "text-foreground overflow-hidden",
       )}
     >
       {/* Background overlay */}
-      <div className="absolute inset-0 opacity-30 dark:opacity-40 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(34,211,238,0.08),transparent_25%)] dark:bg-[radial-gradient(circle_at_15%_50%,rgba(34,211,238,0.14),transparent_25%)]" />
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,hsl(var(--color-primary)/0.08),transparent_25%)]" />
       </div>
 
-      {/* Light mode extra accent */}
-      <div className="absolute inset-0 dark:hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_30%,rgba(59,130,246,0.08),transparent_35%)]" />
+      {/* Accent gradient */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_30%,hsl(var(--color-primary)/0.06),transparent_35%)]" />
       </div>
 
       <motion.div
@@ -58,9 +58,9 @@ export default function Hero() {
         <motion.div className="space-y-8 md:space-y-10">
           {/* Availability badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-100/70 dark:bg-gray-800/60 backdrop-blur-sm rounded-full border border-gray-200/50 dark:border-gray-700/50 text-sm font-medium text-emerald-600 dark:text-emerald-400"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent/40 backdrop-blur-sm rounded-full border border-primary/30 text-sm font-medium text-primary"
             variants={itemVariants}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7 }}
           >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 dark:bg-emerald-500" />
@@ -74,24 +74,24 @@ export default function Hero() {
             <motion.h1
               className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight tracking-tight"
               variants={itemVariants}
-              transition={{ duration: 0.9, ease: "easeOut" }}
+              transition={{ duration: 0.9 }}
             >
               Hello, I'm
               <br />
-              <span className="bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Azhar Sayyed
               </span>
             </motion.h1>
 
             <motion.div
-              className="w-0 h-1.5 bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 rounded-full origin-left"
+              className="w-0 h-1.5 bg-linear-to-r from-primary to-secondary rounded-full origin-left"
               initial={{ width: 0 }}
               animate={{ width: "13rem" }}
-              transition={{ delay: 0.7, duration: 1, ease: "easeOut" }}
+              transition={{ delay: 0.7, duration: 1 }}
             />
 
             <motion.p
-              className="text-xl sm:text-2xl md:text-2xl dark:text-gray-300 text-gray-700 leading-relaxed max-w-2xl"
+              className="text-xl sm:text-2xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
               variants={itemVariants}
               transition={{ duration: 0.9 }}
             >
@@ -114,10 +114,10 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 + i * 0.15, duration: 0.7 }}
               >
-                <div className="text-4xl md:text-5xl font-bold bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-400 dark:to-purple-400 bg-clip-text text-transparent">
+                <div className="text-4xl md:text-5xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="dark:text-gray-400 text-gray-600 text-sm md:text-base mt-1 font-medium">
+                <div className="text-muted-foreground text-sm md:text-base mt-1 font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -133,7 +133,7 @@ export default function Hero() {
             <Button
               variant="outline"
               size="lg"
-              className="gap-2 rounded-full px-8 text-base font-semibold dark:border-gray-700 dark:hover:bg-gray-800 dark:text-white border-gray-300 hover:bg-gray-100 text-gray-900"
+              className="gap-2 rounded-full px-8 text-base font-semibold"
             >
               View my work
               <ArrowDown className="h-4 w-4 animate-bounce" />
@@ -141,7 +141,7 @@ export default function Hero() {
 
             <Button
               size="lg"
-              className="gap-2 rounded-full px-8 text-base font-semibold bg-linear-to-r from-blue-600 to-purple-600 dark:from-cyan-500 dark:to-purple-600 hover:shadow-xl hover:shadow-purple-500/30 text-white"
+              className="gap-2 rounded-full px-8 text-base font-semibold bg-linear-to-r from-primary to-secondary hover:shadow-xl hover:shadow-primary/30 text-primary-foreground"
             >
               Let's Talk
             </Button>
@@ -154,13 +154,12 @@ export default function Hero() {
           variants={imageVariants}
         >
           <motion.div
-            className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-120 lg:h-120 rounded-3xl overflow-hidden border-4 dark:border-cyan-500/30 border-blue-400/40 shadow-2xl dark:shadow-cyan-500/20 shadow-blue-500/20"
+            className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-120 lg:h-120 rounded-3xl overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/10"
             animate={{ y: [0, -12, 0] }}
             transition={{
               duration: 5,
               repeat: Infinity,
               repeatType: "reverse",
-              ease: "easeInOut",
             }}
           >
             <Image
@@ -176,12 +175,11 @@ export default function Hero() {
 
           {/* Decorative rotating glow ring */}
           <motion.div
-            className="absolute -inset-10 lg:-inset-16 rounded-full border border-cyan-500/20 dark:border-cyan-400/20 pointer-events-none"
+            className="absolute -inset-10 lg:-inset-16 rounded-full border border-primary/20 pointer-events-none"
             animate={{ rotate: 360 }}
             transition={{
               duration: 30,
               repeat: Infinity,
-              ease: "linear",
             }}
           />
         </motion.div>

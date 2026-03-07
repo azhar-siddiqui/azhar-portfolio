@@ -267,11 +267,20 @@
 
   /* Smooth section backgrounds */
   .section-bg-light {
-    @apply bg-white dark:bg-slate-950;
+    @apply bg-background;
   }
 
   .section-bg-gradient {
-    @apply bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 from-gray-50 to-white;
+    @apply bg-linear-to-b from-background to-background;
+  }
+
+  /* Section headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-foreground tracking-tight;
+  }
+
+  .section-heading-underline {
+    @apply h-1.5 w-16 bg-linear-to-r from-primary to-secondary rounded-full mt-4;
   }
 
   /* Button animations */
@@ -282,5 +291,19 @@
   /* Link hover effects */
   .link-hover {
     @apply transition-colors duration-300 hover:text-primary;
+  }
+
+  /* Professional card styles */
+  .card-glass {
+    @apply bg-card/60 backdrop-blur-sm border border-border/50 rounded-2xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:border-primary/40 hover:shadow-primary/10;
+  }
+
+  /* Text gradient utility */
+  .text-gradient {
+    @apply bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 }

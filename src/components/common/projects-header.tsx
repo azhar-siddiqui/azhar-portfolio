@@ -21,7 +21,10 @@ export default function ProjectsHeader() {
   ];
 
   return (
-    <section className="bg-gray-950/80 backdrop-blur-sm border-b border-gray-800/50 py-10 md:py-14">
+    <section
+      id="projects"
+      className="bg-background/95 backdrop-blur-sm border-b border-border/50 py-10 md:py-14"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Search + Filter row */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-5 mb-10">
@@ -37,8 +40,8 @@ export default function ProjectsHeader() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={cn(
-                "pl-11 pr-5 py-5 text-base bg-background/70 border-border/60",
-                "rounded-full focus-visible:ring-cyan-500/30 focus-visible:border-cyan-500/50",
+                "pl-11 pr-5 py-5 text-base bg-card/70 border-border/60",
+                "rounded-full focus-visible:ring-primary/30 focus-visible:border-primary/50",
                 "placeholder:text-muted-foreground transition-all duration-200",
               )}
             />
@@ -82,9 +85,6 @@ export default function ProjectsHeader() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             FEATURED PROJECTS
           </h2>
-          <p className="mt-3 text-lg text-muted-foreground">
-            Selected work by Azhar
-          </p>
         </div>
 
         <ProjectGrid
