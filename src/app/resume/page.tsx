@@ -1,5 +1,7 @@
+import { AnimatedLink } from "@/components/resume/animated-link";
+import { ResumeCard } from "@/components/resume/resume-card";
+import { SkillGroup } from "@/components/resume/skill-group";
 import { DATA } from "@/data/resume";
-import { getIcon } from "@/lib/utils";
 import { Link, MoveUpRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -12,12 +14,12 @@ export default function ResumePage() {
   return (
     <main className="min-h-screen bg-background py-10 print:py-0">
       <div className="mx-auto w-full max-w-4xl rounded-2xl border border-border/70 bg-card p-6 shadow-lg md:p-10 print:max-w-none print:rounded-none print:border-0 print:shadow-none">
-        <header className="border-b-4 border-primary  pb-4">
+        <header className="border-b-4 border-primary pb-4">
           <div>
             <h1 className="text-3xl font-bold text-foreground md:text-4xl">
               {DATA.name}
             </h1>
-            <div className="flex items-center gap-x-6">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               <a
                 href={DATA.locationLink}
                 target="_blank"
@@ -34,7 +36,6 @@ export default function ResumePage() {
                 <span className="size-1 bg-primary rounded-full" />
                 {DATA.contact.email}
               </a>
-
               <a
                 href={`tel:${DATA.contact.tel}`}
                 className="mt-2 text-sm text-muted-foreground md:text-base flex items-center gap-x-2"
@@ -43,64 +44,50 @@ export default function ResumePage() {
                 {DATA.contact.tel}
               </a>
             </div>
-            <div className="flex items-center gap-x-6">
-              <a
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <AnimatedLink
                 href={DATA.url}
+                icon={<Link className="size-3 text-primary" />}
+                label="Portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-2 inline-flex text-sm text-primary"
-              >
-                <span className="relative inline-flex items-center gap-x-2">
-                  <Link className="size-3 text-primary" />
-                  <span>Portfolio</span>
-                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-                </span>
-              </a>
-              <a
+              />
+              <AnimatedLink
                 href={DATA.contact.social.GitHub.url}
+                icon={<Link className="size-3 text-primary" />}
+                label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-2 inline-flex text-sm text-primary"
-              >
-                <span className="relative inline-flex items-center gap-x-2">
-                  <Link className="size-3 text-primary" />
-                  <span>GitHub</span>
-                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-                </span>
-              </a>
-              <a
+              />
+              <AnimatedLink
                 href={DATA.contact.social.LinkedIn.url}
+                icon={<Link className="size-3 text-primary" />}
+                label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-2 inline-flex text-sm text-primary"
-              >
-                <span className="relative inline-flex items-center gap-x-2">
-                  <Link className="size-3 text-primary" />
-                  <span>Linkedin</span>
-                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-                </span>
-              </a>
+              />
             </div>
           </div>
         </header>
+
         <section className="mt-4">
           <h2 className="text-lg font-semibold tracking-wide text-foreground">
             Professional Summary
           </h2>
-          <p className="leading-relaxed text-muted-foreground text-sm bg-card-foreground/5 rounded-lg border-l-4 border-l-primary mt-3  px-2 py-4">
-            {DATA.summary}
-          </p>
+          <ResumeCard>
+            <p className="leading-relaxed text-muted-foreground text-sm">
+              {DATA.summary}
+            </p>
+          </ResumeCard>
         </section>
+
         <section className="mt-6">
           <h2 className="text-lg font-semibold tracking-wide text-foreground">
             Experience
           </h2>
           <div className="mt-3 space-y-4">
             {DATA.work.map((job) => (
-              <article
-                key={`${job.company}-${job.start}`}
-                className="bg-card-foreground/5 rounded-lg border-l-4 border-l-primary mt-3  px-2 py-4"
-              >
+              <ResumeCard key={`${job.company}-${job.start}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-semibold text-foreground">
                     {job.title} • {job.company}
@@ -109,10 +96,10 @@ export default function ResumePage() {
                     {job.start} — {job.end}
                   </span>
                 </div>
-                <div className="flex items-center justify-between mt-2">
+                <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
                   <a
                     href={job.href}
-                    className="text-sm text-muted-foreground"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -125,20 +112,18 @@ export default function ResumePage() {
                 <p className="mt-1 leading-relaxed text-muted-foreground text-sm">
                   {job.description}
                 </p>
-              </article>
+              </ResumeCard>
             ))}
           </div>
         </section>
+
         <section className="mt-6">
           <h2 className="text-lg font-semibold tracking-wide text-foreground">
             Education
           </h2>
           <div className="mt-3 space-y-3">
             {DATA.education.map((item) => (
-              <article
-                className="bg-card-foreground/5 rounded-lg border-l-4 border-l-primary mt-3  px-2 py-4"
-                key={`${item.school}-${item.start}`}
-              >
+              <ResumeCard key={`${item.school}-${item.start}`}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-semibold text-foreground">
                     {item.school}
@@ -147,32 +132,31 @@ export default function ResumePage() {
                     {item.start} - {item.end}
                   </span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <p className="text-muted-foreground">{item.degree}</p>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-muted-foreground text-sm">{item.degree}</p>
                   <p className="text-muted-foreground text-sm">
                     {item.location}
                   </p>
                 </div>
-              </article>
+              </ResumeCard>
             ))}
           </div>
         </section>
+
         <section className="mt-6">
           <h2 className="text-lg font-semibold tracking-wide text-foreground">
             Projects
           </h2>
           <div className="mt-3 space-y-4">
             {DATA.projects.slice(0, 6).map((project) => (
-              <article
-                key={project.title}
-                className="bg-card-foreground/5 rounded-lg border-l-4 border-l-primary mt-3  px-2 py-4"
-              >
+              <ResumeCard key={project.title}>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-semibold text-foreground">
                     <a
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
                     >
                       {project.title}
                       <MoveUpRight className="size-3 ml-1 inline-block" />
@@ -185,127 +169,35 @@ export default function ResumePage() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   {project.company}
                 </p>
-                <p className="mt-1 leading-relaxed text-muted-foreground ">
+                <p className="mt-1 leading-relaxed text-muted-foreground text-sm">
                   {project.description}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">
                   Tech: {project.technologies.join(", ")}
                 </p>
-              </article>
+              </ResumeCard>
             ))}
           </div>
+          <p className="text-sm w-96 text-center mx-auto mt-4">
+            <AnimatedLink
+              href="https://azhar-portfolio-delta.vercel.app/"
+              label="View all projects"
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </p>
         </section>
 
         <section className="mt-6">
           <h2 className="text-lg font-semibold tracking-wide text-foreground">
             Skills
           </h2>
-          <div className="bg-card-foreground/5 rounded-lg border-l-4 border-l-primary mt-3  px-2 py-4 flex flex-col gap-y-4">
-            <div className="flex flex-wrap gap-2">
-              <h6 className="text-sm font-semibold tracking-wide text-foreground w-full">
-                Frontend
-              </h6>
-              {DATA.skills.frontend.map((skill) => {
-                const icon = getIcon(skill.icon);
-                return (
-                  <span
-                    key={`${skill.name}-${skill.icon ?? "no-icon"}`}
-                    className="rounded-full py-1 px-2 text-xs text-muted-foreground flex items-center gap-x-2 bg-card-foreground/10"
-                  >
-                    {icon ? (
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="size-3  transition-transform duration-300 group-hover:scale-110"
-                        fill={`#${icon.hex}`}
-                        suppressHydrationWarning
-                      >
-                        <path d={icon.path} />
-                      </svg>
-                    ) : null}
-                    {skill.name}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <h6 className="text-sm font-semibold tracking-wide text-foreground w-full">
-                Backend
-              </h6>
-              {DATA.skills.backend.map((skill) => {
-                const icon = getIcon(skill.icon);
-                return (
-                  <span
-                    key={`${skill.name}-${skill.icon ?? "no-icon"}`}
-                    className="rounded-full py-1 px-2 text-xs text-muted-foreground flex items-center gap-x-2 bg-card-foreground/10"
-                  >
-                    {icon ? (
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="size-3  transition-transform duration-300 group-hover:scale-110"
-                        fill={`#${icon.hex}`}
-                        suppressHydrationWarning
-                      >
-                        <path d={icon.path} />
-                      </svg>
-                    ) : null}
-                    {skill.name}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <h6 className="text-sm font-semibold tracking-wide text-foreground w-full">
-                Devops
-              </h6>
-              {DATA.skills.devops.map((skill) => {
-                const icon = getIcon(skill.icon);
-                return (
-                  <span
-                    key={`${skill.name}-${skill.icon ?? "no-icon"}`}
-                    className="rounded-full py-1 px-2 text-xs text-muted-foreground flex items-center gap-x-2 bg-card-foreground/10"
-                  >
-                    {icon ? (
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="size-3  transition-transform duration-300 group-hover:scale-110"
-                        fill={`#${icon.hex}`}
-                        suppressHydrationWarning
-                      >
-                        <path d={icon.path} />
-                      </svg>
-                    ) : null}
-                    {skill.name}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <h6 className="text-sm font-semibold tracking-wide text-foreground w-full">
-                Testing
-              </h6>
-              {DATA.skills.testing.map((skill) => {
-                const icon = getIcon(skill.icon);
-                return (
-                  <span
-                    key={`${skill.name}-${skill.icon ?? "no-icon"}`}
-                    className="rounded-full py-1 px-2 text-xs text-muted-foreground flex items-center gap-x-2 bg-card-foreground/10"
-                  >
-                    {icon ? (
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="size-3  transition-transform duration-300 group-hover:scale-110"
-                        fill={`#${icon.hex}`}
-                        suppressHydrationWarning
-                      >
-                        <path d={icon.path} />
-                      </svg>
-                    ) : null}
-                    {skill.name}
-                  </span>
-                );
-              })}
-            </div>
-          </div>
+          <ResumeCard className="flex flex-col gap-y-4">
+            <SkillGroup title="Frontend" skills={DATA.skills.frontend} />
+            <SkillGroup title="Backend" skills={DATA.skills.backend} />
+            <SkillGroup title="DevOps" skills={DATA.skills.devops} />
+            <SkillGroup title="Testing" skills={DATA.skills.testing} />
+          </ResumeCard>
         </section>
       </div>
     </main>

@@ -36,18 +36,6 @@ export default function ProjectGrid({
   activeCategory,
   searchQuery,
 }: Readonly<ProjectsGridProps>) {
-  const filteredProjects = projects.filter((project) => {
-    const matchesCategory =
-      activeCategory === "Featured"
-        ? project.isFeatured
-        : project.tags.includes(activeCategory) ||
-          project.tech === activeCategory;
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
   return (
     <section className="bg-linear-to-b from-background to-background py-12 md:py-20">
       <div className="max-w-7xl mx-auto">
@@ -58,7 +46,7 @@ export default function ProjectGrid({
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <motion.div
               key={`${project.title}-${index}`}
               variants={itemVariants}
@@ -113,7 +101,7 @@ export default function ProjectGrid({
                 </CardContent>
 
                 <CardFooter className="p-6 pt-0 flex flex-wrap gap-2 items-center">
-                  {project.tags.slice(0, 2).map((tag, i) => (
+                  {project.tags.map((tag, i) => (
                     <Badge
                       key={`${tag}-${i}`}
                       variant="outline"
@@ -147,7 +135,7 @@ export default function ProjectGrid({
           ))}
         </motion.div>
 
-        {filteredProjects.length === 0 && (
+        {projects.length === 0 && (
           <motion.p
             className="text-center text-muted-foreground mt-10"
             initial={{ opacity: 0 }}

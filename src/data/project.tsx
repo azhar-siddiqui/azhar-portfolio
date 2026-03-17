@@ -14,12 +14,46 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "CashCounter Pro",
+    description:
+      "Developed CashCounter Pro, a professional precision currency counter application designed for financial professionals, banks, and businesses. The application supports 150+ currencies with real-time calculation and provides an intuitive interface for accurate cash counting. Features include multi-currency denomination input with automatic subtotal calculation, live grand total updates, and the ability to convert amounts to words. The platform includes comprehensive sharing and copying capabilities for generated summaries. Built with Next.js and TypeScript for type-safe development, styled with Tailwind CSS for responsive design across all devices. Implements advanced state management with React hooks, integrates country-specific currency data using country-data-list, and features dark/light theme support with next-themes. The application is fully SEO-optimized with structured data, meta tags, and XML sitemap for improved discoverability. Deployed as a Progressive Web App (PWA) enabling offline functionality and installation on mobile devices. Achieved Core Web Vitals optimization with 90+ Lighthouse scores across performance, accessibility, and SEO metrics.",
+    tech: "Next.js",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Radix UI",
+      "Framer Motion",
+      "PWA",
+    ],
+    link: "https://cash-counter-pro-eta.vercel.app/", // Assuming your repo; update if different
+    isFeatured: true,
+  },
+  {
+    title: "Bussiness Card ",
+    description:
+      "A modern, responsive digital business card web application built with TypeScript, Vite, and Tailwind CSS. Features include a personal avatar, contact information, social media links, theme toggling (light/dark mode), and the ability to download a vCard or copy contact details to the clipboard. Designed for fast performance and a clean, professional user experience.",
+    tech: "",
+    tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS"],
+    link: "", // Assuming your repo; update if different
+    isFeatured: true,
+  },
+  {
     title: "We Care",
     description:
       "Comprehensive SaaS-style healthcare platform to digitize laboratory operations. Automates patient lifecycle from registration to real-time tracking and reports.",
     tech: "Next.js",
-    tags: ["Healthcare", "Prisma", "PostgreSQL", "RBAC", "PDF Generation"],
-    link: "https://github.com/azhar-siddiqui/we-care", // Assuming your repo; update if different
+    tags: [
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "TanStack Query",
+      "RBAC",
+      "PDF Generation",
+      "PWA",
+    ],
+    link: "https://we-care-prisma-next-git-main-azhar-siddiquis-projects.vercel.app/",
     isFeatured: true,
   },
   {
@@ -27,16 +61,38 @@ export const projects: Project[] = [
     description:
       "TypeScript-based React web app for maritime shipping. Features RBAC, interactive dashboards, maps (DeckGL), performance reporting, and more.",
     tech: "React",
-    tags: ["Maritime", "Vite", "Tailwind CSS", "AG Grid", "SonarQube"],
+    tags: [
+      "React",
+      "React Native",
+      "TypeScript",
+      "Mapbox",
+      "Ag Grid",
+      "Highcharts",
+      "Tailwind CSS",
+      "TanStack Query",
+      "SonarQube",
+      "New Relic",
+    ],
     link: "https://github.com/azhar-siddiqui/global-tanker-fleet", // Update with real link if exists
     isFeatured: true,
   },
   {
-    title: "Quloi Omni-Channel Supply Chain Platform",
+    title: "Omni Supply Chain Collaboration Platform",
     description:
       "Cloud-native platform for supply chain collaboration. Manages Purchase Orders, shipments, supplier performance, with real-time dashboards and RBAC.",
     tech: "React",
-    tags: ["Logistics", "SaaS", "Dashboards", "RBAC", "KPIs"],
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "NodeJS",
+      "Express",
+      "GraphQL",
+      "Google Maps API",
+      "Electron",
+    ],
     link: "https://omni.quloi.com", // From resume "Visit: omni"
     isFeatured: true,
   },
@@ -45,7 +101,7 @@ export const projects: Project[] = [
     description:
       "Architectural firm site with service offerings, portfolio showcase, pricing matrix, testimonials, and responsive design for conversions.",
     tech: "React",
-    tags: ["Portfolio", "UI/UX", "Pricing", "Responsive", "Motion"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"],
     link: "https://casaarch.com", // From resume "Visit: Casa Arch"; adjust URL
     isFeatured: true,
   },
@@ -54,63 +110,20 @@ export const projects: Project[] = [
     description:
       "React Native app with user auth, home screen, restaurant listings, search, cart, ordering, and multiple payment options.",
     tech: "React Native",
-    tags: ["Mobile", "Firebase", "Auth", "E-commerce", "UI/UX"],
+    tags: ["React Native", "Firebase", "Auth", "Stripe", "Google Maps API"],
     link: "https://example.com/zomato-app-download", // From resume "Download: Zomato App"; update
     isFeatured: true,
   },
   {
-    title: "node-typescript-template-with-standerd",
-    description: "Node.js TypeScript template with standards.",
-    tech: "TypeScript",
-    tags: ["Backend", "Template"],
-    link: "https://github.com/azhar-siddiqui/node-typescript-template-with-standerd",
-    stars: 0,
-    forks: 0,
-    updated: "2026-02-08",
-  },
-  {
-    title: "authntication-and-authrization-production-api",
-    description: "Production-ready authentication and authorization API.",
-    tech: "TypeScript",
-    tags: ["Auth", "API"],
-    link: "https://github.com/azhar-siddiqui/authntication-and-authrization-production-api",
-    stars: 0,
-    forks: 0,
-    updated: "2026-02-02",
-  },
-  {
-    title: "node-js-typescript-app-trpc",
-    description: "Node.js TypeScript app with tRPC and OpenAPI documentation.",
-    tech: "TypeScript",
-    tags: ["Backend", "tRPC", "API"],
-    link: "https://github.com/azhar-siddiqui/node-js-typescript-app-trpc",
-    stars: 0,
-    forks: 0,
-    updated: "2026-02-02",
-  },
-  {
-    title: "todo-app-with-convex-launchdarkly",
-    description: "Todo app using Convex and LaunchDarkly.",
-    tech: "TypeScript",
-    tags: ["Frontend", "Todo"],
+    title: "Real-Time Data Updation Application",
+    description: "App using Convex and LaunchDarkly.",
+    tech: "Next.js",
+    tags: ["Next.js", "Convex", "LaunchDarkly"],
     link: "https://github.com/azhar-siddiqui/todo-app-with-convex-launchdarkly",
-    stars: 0,
-    forks: 0,
     updated: "2026-01-11",
   },
   {
-    title: "next-shadcn-admin-dashboard",
-    description:
-      "Modern Admin Dashboard Template built with Shadcn UI and Next.js 16.",
-    tech: "TypeScript",
-    tags: ["Dashboard", "Shadcn", "Next.js"],
-    link: "https://github.com/azhar-siddiqui/next-shadcn-admin-dashboard",
-    stars: 1,
-    forks: 0,
-    updated: "2025-12-04",
-  },
-  {
-    title: "sonarqube-issues-exporter",
+    title: "SonarQube Issues Exporter",
     description:
       "Enterprise-level SonarQube issues exporter with TypeScript support for generating shareable HTML reports. Available as npm package with CLI tools.",
     tech: "Handlebars",
@@ -121,10 +134,10 @@ export const projects: Project[] = [
     updated: "2025-11-26",
   },
   {
-    title: "medicare-pathology-software",
+    title: "Medicare Pathology Software",
     description: "Medicare pathology software.",
     tech: "TypeScript",
-    tags: ["Healthcare", "Software"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     link: "https://github.com/azhar-siddiqui/medicare-pathology-software",
     stars: 0,
     forks: 0,

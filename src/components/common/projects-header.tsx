@@ -8,17 +8,10 @@ import { useState } from "react";
 import ProjectGrid from "./project-grid";
 
 export default function ProjectsHeader() {
-  const [activeCategory, setActiveCategory] = useState("Featured");
+  const [activeCategory, setActiveCategory] = useState("All Projects");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const categories = [
-    "Featured",
-    "Web",
-    "Mobile",
-    "UI/UX",
-    "Open Source",
-    // Add more: "Design", "Experimental", etc.
-  ];
+  const categories = ["All Projects", "Web", "Mobile", "Desktop"];
 
   return (
     <section
@@ -63,21 +56,24 @@ export default function ProjectsHeader() {
 
         {/* Category filters – using shadcn Button as chips/tabs */}
         <div className="flex items-center gap-3 overflow-x-auto pb-3 scrollbar-hide">
-          {categories.map((cat) => (
-            <Button
-              key={cat}
-              variant={cat === activeCategory ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(cat)}
-              className={cn(
-                "px-6 py-2.5 text-sm font-medium rounded-full whitespace-nowrap transition-all",
-                cat !== activeCategory &&
-                  "bg-background/50 border-border/50 hover:bg-accent/70 hover:border-border/80 text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {cat}
-            </Button>
-          ))}
+          {categories.map((cat) => {
+            console.log("cat", { cat, activeCategory });
+            return (
+              <Button
+                key={cat}
+                variant={cat === activeCategory ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveCategory(cat)}
+                className={cn(
+                  "px-6 py-2.5 text-sm font-medium rounded-full whitespace-nowrap transition-all",
+                  cat !== activeCategory &&
+                    "bg-background/50 border-border/50 hover:bg-accent/70 hover:border-border/80 text-muted-foreground hover:text-foreground",
+                )}
+              >
+                {cat}
+              </Button>
+            );
+          })}
         </div>
 
         {/* Title section */}
