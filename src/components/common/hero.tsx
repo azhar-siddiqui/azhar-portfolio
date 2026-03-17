@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { motion, Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
-
+import ResumeDownloadButton from "./resume-download-button";
+// <ResumeDownloadButton className="print:hidden" />;
 // Define variants properly (no transition inside states)
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -147,6 +148,8 @@ export default function Hero() {
             >
               Let's Talk
             </Button>
+
+            <ResumeDownloadButton />
           </motion.div>
         </motion.div>
 
