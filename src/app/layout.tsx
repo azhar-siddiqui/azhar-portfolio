@@ -1,5 +1,4 @@
 import Loader from "@/components/common/loader";
-import NavBar from "@/components/common/nav-bar";
 import { DATA } from "@/data/resume";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
@@ -165,8 +164,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Loader />
-          <NavBar />
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
